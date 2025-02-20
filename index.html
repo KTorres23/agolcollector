@@ -57,7 +57,7 @@
             container: "viewDiv", // Reference to the DOM node that will contain the view
             map: map, // References the map object
             center: [-86.873290, 30.787528], // Coordinates for Blackwater River State Forest, FL
-            zoom: 15
+            zoom: 5
         });
 
         const locateBtn = new Locate({
@@ -65,7 +65,9 @@
         });
 
         const searchWidget = new Search({
-            view: view
+            view: view,
+            maxSuggestions: 3,
+            allPlaceholder: "Try searching for the nearest road..."
         });
 
         // Create feature layer of survey123 results
@@ -77,14 +79,14 @@
 
         // Add locate widget to the top left corner of the view
         view.ui.add(locateBtn, {
-            position: "top-left"
+            position: "top-left",
+            index: 0
         });
 
         // Add search widget to the top right corner of the view
         view.ui.add(searchWidget, {
-            position: "top-right",
-            maxSuggestions: 3,
-            allPlaceholder: "Try searching for the nearest road...",
+            position: "top-left",
+            index: 1
         });
 
         
