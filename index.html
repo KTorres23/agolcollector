@@ -35,19 +35,19 @@
 
         const view = new MapView({
             container: "viewDiv", // Reference to the DOM node that will contain the view
-            map: map // References the map object
+            map: map, // References the map object
+            center: [-87.1467, 30.9594], // Coordinates for UF WFREC, Jay, FL
+            zoom: 15 // Zoom level
         });
 
         view.when(() => {
-          console.log("Map and View are ready");
+        console.log("Map and View are ready");
         }, (error) => {
-          console.error("Error creating view: ", error);
+        console.error("Error creating view: ", error);
         });
-      }, (error) => {
-        console.error("Error loading modules: ", error);
 
-    });
-
+      });
+      
     </script>
 
   </head>
